@@ -376,7 +376,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         .titleLarge
                                         .fontStyle,
                                   ),
-                              hintText: 'Hometown...',
+                              hintText: 'Favorite Activity...',
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
@@ -581,7 +581,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     await currentUserReference!.update(createUsersRecordData(
                       displayName: _model.textController1.text,
                       birthday: _model.datePicked,
-                      hometown: _model.textController2.text,
+                      favoriteActivity: _model.textController2.text,
                     ));
 
                     context.goNamed(TasksWidget.routeName);
