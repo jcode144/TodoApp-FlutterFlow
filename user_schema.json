@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Firestore User Document",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "Firebase Authentication user ID"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "photo_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "birthday": {
+      "type": "string",
+      "format": "date-time",
+      "description": "User birthday stored as Firestore timestamp"
+    },
+    "created_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Account creation timestamp"
+    },
+    "favorite_activity": {
+      "type": "string",
+      "description": "User's favorite activity"
+    }
+  },
+  "required": [
+    "uid",
+    "display_name",
+    "email",
+    "created_time"
+  ],
+  "additionalProperties": false
+}
