@@ -164,23 +164,16 @@ class _CompletedWidgetState extends State<CompletedWidget> {
                       itemBuilder: (context, listViewIndex) {
                         final listViewTasksRecord =
                             listViewTasksRecordList[listViewIndex];
-                        return InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
+                        return TaskWidget(
+                          key: Key(
+                              'Keyahu_${listViewIndex}_of_${listViewTasksRecordList.length}'),
+                          tasksDoc: listViewTasksRecord,
+                          checkAction: () async {
                             await listViewTasksRecord.reference
                                 .update(createTasksRecordData(
                               completed: false,
                             ));
                           },
-                          child: TaskWidget(
-                            key: Key(
-                                'Keyahu_${listViewIndex}_of_${listViewTasksRecordList.length}'),
-                            tasksDoc: listViewTasksRecord,
-                            checkAction: () async {},
-                          ),
                         );
                       },
                     );
